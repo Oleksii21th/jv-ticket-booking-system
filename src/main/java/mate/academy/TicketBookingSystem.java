@@ -12,11 +12,7 @@ public class TicketBookingSystem {
 
     public BookingResult attemptBooking(String user) {
         if (seats.tryAcquire()) {
-            try {
-                return new BookingResult(user, true, "Booking succeed");
-            } finally {
-
-            }
+            return new BookingResult(user, true, "Booking succeed");
         } else {
             return new BookingResult(user, false, "No available seats");
         }
